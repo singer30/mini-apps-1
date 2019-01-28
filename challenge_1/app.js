@@ -1,20 +1,21 @@
 console.log('is this working?');
 
-var squareArray = document.getElementsByClassName("square")
-var square1 = document.getElementById("square1")
+    
+   for (let i = 1; i <= 9; i++){ 
+     var id = JSON.stringify(i)
+     var square = document.getElementById(i);
+     console.log(square);
+     square.addEventListener("click", function(event){
+          console.log(event);
+         console.log(event.target.innerText);
+         if (!event.target.innerText) {
+             (event.target).append("x");
+         } 
+     })
+   }
 
-console.log(typeof squareArray)
-for (var i = 0; i < squareArray.length; i++){
-    var square = squareArray.item(i);
-    square.addEventListener("click", function(){ 
-        alert("Hello World!"); 
-     });
-}
-// squareArray.forEach(function(square){
-//     square.addEventListener("click", function(){ 
-//         alert("Hello World!"); 
-//     });
-// });
+
+
 
 
 
