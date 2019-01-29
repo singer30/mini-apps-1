@@ -6,10 +6,21 @@ var path = require('path');
 // connect the server to the client folder
 const app = express();
 app.use(express.static('client'));
-console.log('listening on port' + ' ' + port);
+console.log('listening on:' + ' ' + port);
 // have the server listen to activity on the port. 
+
+app.post(path, function(req, res){
+    console.log('am i recieving posts');
+    res.send('Post request to homepage');
+})
+
 app.listen(port);
 
+
+
+// app.post(`/`, funciton(req, res) {
+//     res.send("post request to homepage");
+// });
 
 module.exports.app = app;
 
@@ -28,7 +39,5 @@ module.exports.app = app;
 //     res.send('hello World')
 // });
 
-// //app.post method
-// app.post(`/`, funciton(req, res) {
-//     res.send("post request to homepage");
-// });
+
+
