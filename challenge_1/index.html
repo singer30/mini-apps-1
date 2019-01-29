@@ -2,41 +2,42 @@
 <html lang="en">
     <head>
         <title>Tic-Tac-Toe</title>
-        <style>
-         table {
-           border-collapse: collapse;
-         }
-
-         table, td{
-           border: 1px solid black;
-           width: 270px;
-           height: 90px; 
-           text-align: center;
-           text-justify: center;
-           font-size: 50px;
-         }
-</style>
-    </head>
-    <body>
+        <link rel="stylesheet" href="app.css">
         
-        <div class='app'>
+    </head>
+    <body onload="selectName()">
+        <h1 id="message">Welcome to Luke's Tic-Tac-Toe!</h1>
+        <div id="scorebored">
+          <div id="playerX">PlayerX: </div>
+          <div id="scoreX">0</div>
+          <div id="playerO">PlayerO:</div>
+          <div id="scoreO">0</div>
+        </div>
+        
+        <div class='game'>
+          
         <button class="newGame">New Game</button>
         <table>
-            <tr>
+            <tr id="row1">
+              <td class="squares" id="0"></td>
               <td class="squares" id="1"></td>
               <td class="squares" id="2"></td>
-              <td class="squares" id="3"></td>
             </tr>
+            <tr id="row2">
+              <td class="squares" id="3"></td>
               <td class="squares" id="4"></td>
               <td class="squares" id="5"></td>
+            </tr>
+            <tr id="row3">
               <td class="squares" id="6"></td>
-            <tr>
               <td class="squares" id="7"></td>
               <td class="squares" id="8"></td>
-              <td class="squares" id="9"></td>
             </tr>
         </table>
         </div>
         <script src="app.js"></script>
     </body>
 </html>
+
+
+
