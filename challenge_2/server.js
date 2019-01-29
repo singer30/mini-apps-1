@@ -3,20 +3,19 @@ const express = require('express');
 var port = 3000;
 var path = require('path');
 
+
 // connect the server to the client folder
 const app = express();
 app.use(express.static('client'));
-console.log('listening on:' + ' ' + port);
+
 // have the server listen to activity on the port. 
 
-app.post(path, function(req, res){
-    console.log('am i recieving posts');
-    res.send('Post request to homepage');
+app.post("/", function(req, res) {
+    console.log(req);
 })
 
+console.log('listening on:' + ' ' + port);
 app.listen(port);
-
-
 
 // app.post(`/`, funciton(req, res) {
 //     res.send("post request to homepage");
