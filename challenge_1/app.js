@@ -51,6 +51,7 @@ var selectName = function() {
              board[event.target.id] = event.target.innerText;
              count++;
              checkForAWinner();
+             checkForATie(checkForAWinner);
              // check if there is a winner. 
              // if there is a winner, launch an alert announcing the winner. 
          } 
@@ -145,14 +146,14 @@ var checkForAWinner = function() {
              scoreO.innerHTML = parseInt(scoreO.innerHTML) + 1; 
          } 
      }
-     // tie
-     if (count === 9) {
-         message.innerHTML = (`It's a tie!`)  
-     }
 }
 
 
-
-
-
-
+var checkForATie = function(func) {
+    if(count === 9) {
+        func();
+        if(winner === undefined) {
+           message.innerHTML = (`It's a tie!`) 
+        }
+    }
+}
