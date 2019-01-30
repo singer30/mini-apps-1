@@ -9,17 +9,24 @@ var port = 3000;
 // connect the server to the client folder
 const app = express();
 app.use(express.static('client'));
+
+
 app.use(parser());
 
 //var urlencodedParser = parser.urlencoded({ extended: true })
 // have the server listen to activity on the port. 
 
+app.set('views', './client');
+app.set('view engine', 'pug');
+
+
 app.post('/', function(req, res) {
 // render a new webpage
 // redirect the user to the new page. 
 // end the response
-console.log('I still work', req.body);
-    res.end();
+//console.log('I still work', req.body);
+console.log("this is the datatype", req.body);
+res.render('index2', {data: req.body.inputData});
 })
 
 console.log('listening on:' + ' ' + port);
