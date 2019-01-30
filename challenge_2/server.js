@@ -1,17 +1,25 @@
 const express = require('express');
+const parser = require('body-parser');
+
 
 var port = 3000;
-var path = require('path');
+//var path = require('path');
 
 
 // connect the server to the client folder
 const app = express();
 app.use(express.static('client'));
+app.use(parser());
 
+//var urlencodedParser = parser.urlencoded({ extended: true })
 // have the server listen to activity on the port. 
 
-app.post("/", function(req, res) {
-    console.log(req);
+app.post('/', function(req, res) {
+// render a new webpage
+// redirect the user to the new page. 
+// end the response
+console.log('I still work', req.body);
+    res.end();
 })
 
 console.log('listening on:' + ' ' + port);
