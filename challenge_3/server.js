@@ -1,29 +1,38 @@
-express = require('express');
+const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-const port = 3000;
 
 
+
+
+
+
+app.set('port', 3000);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.static('public'));
 
-app.get('/', function (req, res) {
-  console.log('I am getting?');
-});
+// app.get('/', function (req, res) {
+//   console.log('I am getting?');
+// });
+
+
 
 app.post('/', function (req, res) {
-  console.log('Am i posting?');
-  res.send("yes i am")
+  console.log(req.body);
   res.end();
 })
-console.log("Listening on port: " + port);
-app.listen(port);
 
 
 
 
 
 
+
+console.log("Listening on port: " + 3000);
+app.listen(app.get('port'));
 
 module.exports.app = app;
