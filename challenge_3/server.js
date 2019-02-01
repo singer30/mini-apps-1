@@ -22,11 +22,12 @@ app.use(express.static('public'));
 
 
 app.post('/', function (req, res) {
-  console.log(req.body);
+  console.log(req.body.name);
+  //var dbQuery = `insert into customers (name, email, password) values (${req.body.name}, ${req.body.email}, ${req.})`
   res.end();
 })
 
-
+// ${ app.get('port') }
 
 
 
